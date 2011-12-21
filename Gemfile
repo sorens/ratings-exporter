@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'rest-client'
 gem 'nokogiri'
 gem 'oauth'
-gem 'delayed_job_active_record'
+gem 'delayed_job',          "~> 2.1.4"
 gem 'less-rails-bootstrap', "~> 1.4.0"
 gem 'activeadmin'
 gem 'sass-rails',     "~> 3.1.0"
@@ -37,5 +37,5 @@ group :test do
 end
 
 group :production do
-  gem 'workless'
+  gem 'workless', :git => "git://github.com/christophercotton/workless"
 end
