@@ -10,6 +10,7 @@ gem 'rest-client'
 gem 'nokogiri'
 gem 'oauth'
 gem 'delayed_job_active_record'
+gem 'less-rails-bootstrap', "~> 1.4.0"
 gem 'activeadmin'
 gem 'sass-rails',     "~> 3.1.0"
 gem 'meta_search',    '>= 1.1.0.pre'
@@ -28,7 +29,6 @@ gem 'meta_search',    '>= 1.1.0.pre'
 group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-  gem 'less-rails-bootstrap', "~> 1.4.0"
 end
 
 group :test do
