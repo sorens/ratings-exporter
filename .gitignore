@@ -1,0 +1,16 @@
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
+log/*.log
+tmp/**/*
+tmp/*
+.DS_Store
+.idea
+local/*
+.rvmrc*
+.redcar/*
+.dropbox
+Icon*
+.powrc
+.powenv
+config/overrides/*

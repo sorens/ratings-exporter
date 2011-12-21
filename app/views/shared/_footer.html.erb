@@ -1,0 +1,18 @@
+<% if Rails.env == "development" %>
+<br/>
+<div class="row">
+<div class="span1"><p/></div>
+<div class="span14">
+<pre>
+app_key: <%= Rails.application.config.netflix_app_key %>
+app_secret: <%= Rails.application.config.netflix_app_secret %>
+token: <%= session[:access_token] %>
+secret: <%= session[:secret] %>
+user_id: <%= session[:user_id] %>
+</pre>
+</div>
+</div>
+<% end %>
+<footer>
+&copy; 2011-2012 <%= link_to "Stephen Orens", "http://sorens.github.com" %>
+</footer>

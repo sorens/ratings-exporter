@@ -1,0 +1,11 @@
+<h1>your export is unfinished</h1>
+<p/>
+<p>There are <span id="count"><%= count %></span> unfinished exports remaining. This can happen if you have too many ratings to export in a single day. Netflix limits each user to 5,000 requests per day. Come back tomorrow and click <em>Continue</em>.</p>
+<p>If you prefer not to wait and do not want those remaining ratings, click <em>Ignore</em>.
+
+<p>
+  <%= link_to "Continue", continue_path, :class => "btn primary large" %>
+  <%= link_to "Ignore", ignore_path, :class => "btn large" %>
+</p>
+
+<%= render :partial => '/shared/logo' %>

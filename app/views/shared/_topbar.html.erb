@@ -1,0 +1,4 @@
+<%= link_to "ratings exporter for Netflix", root_path, :class => "brand" %>
+<% if session[:user_id] %>
+  <p class="pull-right">netflix id: <%= session[:user_id] %> <%= link_to "[sign out]", sign_out_path %></p>
+<% end %>

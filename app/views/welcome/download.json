@@ -1,0 +1,6 @@
+<% a = {} %>
+<% @titles.each { |title|
+    a[title.netflix_id] = generate_title_json( title )
+    }
+%>
+<%= raw( a.to_json ) %>

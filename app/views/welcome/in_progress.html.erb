@@ -1,0 +1,27 @@
+<script type="text/javascript">
+if( window.top == window )
+{
+  window.setTimeout( 'update_progress_count();', 15000 );
+  function update_progress_count(){
+  $.getJSON( "<%= progress_path %>", function(data) {
+    if ( data.jobs > 0 )
+    {
+      $('#count').hide();
+      $('#count')[0].innerHTML=data.jobs;
+      $('#count').fadeIn(800);
+      window.setTimeout( 'update_progress_count();', 15000 );
+    }
+    else if (data.location)
+    {
+      window.location.href = data.location;
+    }
+  });
+  }
+}
+</script>
+<h1>your export is processing</h1>
+<p/>
+<p>There are <span id="count"><%= count %></span> export(s) remaining in your queue. (<em>note: this value will countdown periodically while your record are being processed.</em>)</p>
+
+
+<%= render :partial => '/shared/logo' %>

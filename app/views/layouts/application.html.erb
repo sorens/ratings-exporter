@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ratings exporter for Netflix</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+  <style>
+  body
+  {
+    padding-top: 60px;
+  }  
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <%= render :partial => "/shared/topbar" %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-unit">
+      <%= render :partial => "/shared/alert_notice" %>
+      <%= yield %>
+    </div>
+    <%= render :partial => "/shared/info" %>
+    <%= render :partial => "/shared/footer" %>
+  </div>
+</body>
+</html>
