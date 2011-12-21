@@ -9,9 +9,6 @@ gem 'rest-client'
 gem 'nokogiri'
 gem 'oauth'
 gem 'delayed_job_active_record'
-group :production do
-  gem 'workless'
-end
 gem 'activeadmin'
 gem 'sass-rails',     "~> 3.1.0"
 gem 'meta_search',    '>= 1.1.0.pre'
@@ -36,4 +33,8 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :production do
+  gem 'workless'
 end
