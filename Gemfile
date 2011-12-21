@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem "SystemTimer", :require => "system_timer", :platforms => :ruby_18
 gem "rack-timeout"
 gem 'pg'
 gem 'rake'
