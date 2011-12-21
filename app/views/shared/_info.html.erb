@@ -27,7 +27,7 @@
 <div class="span5">
   <h2>Good news, Bad news</h2>
   <p>The bad news is that this service is only using one web dyno and one worker process. So, it is going to be slow. The good news is, this service is free!</p>
-  <p>Even more good news, the code for this service is available on <%= link_to "Github", "https://github.com/sorens/ratings_exporter" %>. Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
+  <p>Even more good news, the code for this service is available on <%= link_to "Github", "https://github.com/sorens/ratings-exporter" %>. Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
   <p>Netflix does limit the number of requests to 5,000 per user per day. I figured this out after I had architected the service to make a single request per title to fetch your ratings. There is a way to request several ratings in a batch, but I haven't got back and retrofitted the service to do that yet. If you have more than 5,000 movies in your rental history, then it will take you a few days to export your entire history. If you hit the 5,000 limit, you can come back to this service tomorrow and there will be a <em>Continue</em> button which will allow you to continue processing your export where you left off. If you want to skip the remaining exports, you can click the <em>Ignore</em> button instead. At which point, you will be able to download your data.
     <p>Use of this service is at your own risk. The authors of this webservice can not promise that bad things won't happen, up to and including the universe collasping back on itself.</p>
 </div>
