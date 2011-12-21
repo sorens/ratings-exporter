@@ -62,7 +62,7 @@ private
         user_feed.extract
         DownloadRentalsJob.enqueue( "shipped", user_feed.shipped, token, secret, user_id )
         DownloadRentalsJob.enqueue( "watched", user_feed.watched, token, secret, user_id )
-      rescue OauthHelperException => e
+      rescue Exceptions::OauthHelperException => e
         Rails.logger.error "failed to request [#{e.class}] for [#{e.message}]"
         msg = { :error => e.message }
       end
