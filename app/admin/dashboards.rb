@@ -1,4 +1,13 @@
 ActiveAdmin::Dashboards.build do
+  
+  section "Recent Users: #{Title.select( "DISTINCT(user_id)" ).count}" do
+    table_for Title.select( "DISTINCT(user_id)" ).limit(50) do
+      column "USER_ID" do |c| link_to c.user_id, admin_titles_path(c) end
+      column "UPDATED" do |c|
+        "#{Title.where( :user_id => c.user_id ).order( "updated_at desc" ).limit(1).first.updated_at.to_time.localtime.to_formatted_s( :short )}"
+      end
+    end
+  end
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
