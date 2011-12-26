@@ -23,6 +23,11 @@ class Feed
         resp =  RestClient.get paged_url
         xml = Nokogiri::XML resp.to_s
         results_per_page = xml.xpath( "//nflx:results_per_page" ).text.to_i
+        if results_per_page
+          # perhaps there was no results_per_page tag, try counting entries
+          results_per_page = xml.xpath( '//xmlns:entry' ).count
+          results_per_page = xml.xpath( '//entry' ).count if results_per_page == 0
+        end
         Rails.logger.info "[#{name}] there are [#{results_per_page}]"
         @responses << resp
         if results_per_page >= @max
@@ -31,9 +36,10 @@ class Feed
           continue = false
         end
       end
-      
+    rescue RestClient::Request::Unauthorized => unauthorized
+      Rails.logger.error "[#{name}]: unauthorized [#{re.message}]"
     rescue RestClient::Exception => re
-      Rail.logger.error "[#{name}]: exception [#{re.message}]"
+      Rails.logger.error "[#{name}]: exception [#{re.message}] [#{re.class}]"
     end
     
   end

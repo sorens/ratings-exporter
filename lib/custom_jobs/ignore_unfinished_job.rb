@@ -9,7 +9,7 @@ class IgnoreUnfinishedJob < Struct.new( :token, :secret, :user_id )
   def perform
     Title.where( :user_id => user_id, :exported => 0 ).find_each( :batch_size => 100 ) do |title|
       if title
-        title.exported = 1
+        title.exported = 2
         title.save
       end
     end

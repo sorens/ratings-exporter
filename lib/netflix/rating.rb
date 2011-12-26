@@ -21,7 +21,7 @@ class Rating
     begin
       consumer = OauthHelper.create_consumer
       access_token = OAuth::AccessToken.new( consumer, @token, @secret )
-      rating_url = "/users/#{@user_id}/ratings/title/actual?title_refs=#{encoded_title_url}"
+      rating_url = "/users/#{@user_id}/ratings/title?title_refs=#{encoded_title_url}"
       resp = access_token.get( rating_url )
       xml = Nokogiri::XML( resp.body.to_s )
       rating = xml.xpath( "//user_rating" ).text
@@ -38,7 +38,7 @@ class Rating
       end
       record.save
       if Rails.env == "development"
-        Rails.logger.debug "[#{@user_id}] rating for [#{record.name}] is [#{rating}, seen [#{record.viewed_date}]]"
+        Rails.logger.debug "[#{@user_id}] rating for [#{record.name}] is [#{rating}], seen [#{record.viewed_date}]"
       end
       
     rescue Exception => e

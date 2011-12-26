@@ -28,7 +28,7 @@
   <h2>Good news, Bad news</h2>
   <p>The bad news is that this service is only using one web dyno and one worker process. So, it is going to be slow. The good news is, this service is free!</p>
   <p>Even more good news, the code for this service is available on <%= link_to "Github", "https://github.com/sorens/ratings-exporter" %>. Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
-  <p>Netflix does limit the number of requests to 5,000 per user per day. I figured this out after I had architected the service to make a single request per title to fetch your ratings. There is a way to request several ratings in a batch, but I haven't got back and retrofitted the service to do that yet. If you have more than 5,000 movies in your rental history, then it will take you a few days to export your entire history. If you hit the 5,000 limit, you can come back to this service tomorrow and there will be a <em>Continue</em> button which will allow you to continue processing your export where you left off. If you want to skip the remaining exports, you can click the <em>Ignore</em> button instead. At which point, you will be able to download your data.
+  <p>2011-12-26: Even more good news, Batch exporting is now supported! So it is very unlikel you will hit the Netflix-enforced 5,000 requests per day per user limit. If you hit the 5,000 limit, you can come back to this service tomorrow and there will be a <em>Continue</em> button which will allow you to continue processing your export where you left off. If you want to skip the remaining exports, you can click the <em>Ignore</em> button instead. At which point, you will be able to download your data. However, the batch exporting is not always fool-proof. Sometimes you are left with a few movies that are missing your rating data. If you click the <em>Continue</em> button, we'll process those movies indivudally and hopefully be able to update them with your ratings.
     <p>Use of this service is at your own risk. The authors of this webservice can not promise that bad things won't happen, up to and including the universe collasping back on itself.</p>
 </div>
 </div>
@@ -44,7 +44,8 @@
         "url": "http://api.netflix.com/catalog/titles/movies/60010377",
         "rating": "4.0",
         "type": "streamed",
-        "viewed_date": "2011-12-05T09:03:48Z"
+        "viewed_date": "2011-12-05T09:03:48Z",
+        "exported":1
     },
     "70102614": {
         "id": "70102614",
@@ -53,7 +54,18 @@
         "url": "http://api.netflix.com/catalog/titles/programs/70102614",
         "rating": "5.0",
         "type": "streamed",
-        "viewed_date": "2009-04-03T17:20:30Z"
+        "viewed_date": "2009-04-03T17:20:30Z",
+        "exported":1
+    },
+    "60003378": {
+      "id": "60003378",
+      "title": "Billy Elliot",
+      "year": "2000",
+      "url": "http://api.netflix.com/catalog/titles/movies/60003378",
+      "rating": null,
+      "type": "streamed",
+      "viewed_date": "2011-08-04T13:06:45-07:00",
+      "exported": 2
     }
 }  
 </pre>

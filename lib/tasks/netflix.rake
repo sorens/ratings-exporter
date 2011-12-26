@@ -72,16 +72,33 @@ namespace :netflix do
         end
         if refs and refs.length > 0
           begin
-            tmp = refs[0..499]
+            puts "total [#{refs.count}]"
+            #tmp = refs[refs.count-500..refs.count-1]
+            index = 499
+            if refs.count < 499
+              index = refs.count
+            end
+            tmp = refs[0..index] # first block of 500 records, unless we don't have 500 records
             title_refs = tmp.collect { |r| r }.join(",")
-            puts "[#{tmp.count}] title_refs: [#{title_refs}]"
+            puts "[#{tmp.count}] title_refs"
             rating_url = "/users/#{user_id}/ratings/title"
             resp = access_token.post( rating_url, { :title_refs => title_refs, :method => "GET" } )
             xml = Nokogiri::XML( resp.body.to_s )
-            count = xml.xpath( "//user_rating" ).count
-            puts "there are [#{count}]"
+            ur_count = xml.xpath( "//user_rating" ).count
+            puts "there are [#{ur_count}] user_ratings"
+            ratings = xml.xpath( "//ratings_item" )
+            puts "there are [#{ratings.count}] ratings"
             puts resp.inspect
-            puts xml
+            ratings.each do |ratings|
+              id = ratings.xpath( 'id' ).text.split( "/" ).last
+              rate = ratings.xpath( 'user_rating' ).text
+              unless id.blank?
+                puts "#{id} => #{rate}"
+              else
+                puts "no id"
+              end
+            end
+            #puts xml
           rescue Exception => e
             puts e.message
             puts e.backtrace
@@ -90,6 +107,26 @@ namespace :netflix do
       else
         puts "there are no responses for [#{url}]"
       end
+    end
+  end
+  
+  RESERVED = /[^A-Za-z0-9\-\._~]/
+  
+  desc "fetch the title"
+  task :title, [:netflix_id] => :environment do |t,args|
+    puts "--------------------------------------------------------------------------"
+    puts "[#{DateTime.now}] request title info [#{args.netflix_id}]"
+    puts "--------------------------------------------------------------------------"
+    access_token = at_load
+    if access_token
+      user_id = access_token.params['user_id']
+      encoded_title_url = URI.escape "http://api.netflix.com/catalog/titles/movies/#{args.netflix_id.to_s}", RESERVED
+      puts "url: [#{encoded_title_url}]"
+      rating_url = "/users/#{user_id}/ratings/title?title_refs=#{encoded_title_url}"
+      resp = access_token.get( rating_url )
+      # xml = Nokogiri::XML( resp.body.to_s )
+      puts resp.inspect
+      puts resp.body.to_s
     end
   end
   

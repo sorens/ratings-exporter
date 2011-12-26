@@ -1,7 +1,8 @@
 <h1>your export is unfinished</h1>
 <p/>
-<p>There are <span id="count"><%= count %></span> unfinished exports remaining. This can happen if you have too many ratings to export in a single day. Netflix limits each user to 5,000 requests per day. Come back tomorrow and click <em>Continue</em>.</p>
-<p>If you prefer not to wait and do not want those remaining ratings, click <em>Ignore</em>.
+<p>There are <span id="count"><%= count %></span> unfinished exports remaining. Sometimes the batch export misses ratings, but we're not completely sure why this happens. If you click continue, we'll queue individual export jobs for the remaining ratings which should complete. If this causes you to go over your maximum request per day for Netflix (5,000 requests per day per user_id), you can return tomorrow and click <em>Continue</em>.</p>
+<p>Otherwise, if you prefer not to skip those remaining exports, click <em>Ignore</em>.
+<p>Results will now include <em>&quot;exported&quot;:1</em> if the rating was exported correctly and <em>&quot;exported&quot;:2</em> if you specified to ignore/skip the rating.
 
 <p>
   <%= link_to "Continue", continue_path, :class => "btn primary large" %>
