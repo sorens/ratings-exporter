@@ -33,6 +33,7 @@ namespace :netflix do
         puts "watched:\r\n#{user_feed.watched}"
         puts "history:\r\n#{user_feed.history}"
         puts "disc_queue:\r\n#{user_feed.disc_queue}"
+        puts "recent_disc:\r\n#{user_feed.recent_disc_queue}"
         puts "instant_queue:\r\n#{user_feed.instant_queue}"
         puts "reviews:\r\n#{user_feed.reviews}"
         puts "recommendations:\r\n#{user_feed.recommendations}"

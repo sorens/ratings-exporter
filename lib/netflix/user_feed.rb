@@ -4,6 +4,7 @@ class UserFeed
   KEY_WATCHED         = "watched"
   KEY_HISTORY         = "history"
   KEY_DISC_QUEUE      = "disc.queue"
+  KEY_RECENT_DISC     = "recent.disc.queue"
   KEY_INSTANT_QUEUE   = "instant.queue"
   KEY_REVIEWS         = "reviews"
   KEY_RECOMMENDATIONS = "recommendations"
@@ -22,6 +23,7 @@ class UserFeed
   SHIPPED_HISTORY   = '//*[@rel="http://schemas.netflix.com/feed.rental_history.shipped"]'
   WATCHED_HISTORY   = '//*[@rel="http://schemas.netflix.com/feed.rental_history.watched"]'
   DISC_QUEUE        = '//*[@rel="http://schemas.netflix.com/feed.queues.disc"]'
+  RECENT_DISC_QUEUE = '//*[@rel="http://schemas.netflix.com/feed.queues.disc.recent"]'
   INSTANT_QUEUE     = '//*[@rel="http://schemas.netflix.com/feed.queues.instant"]'
   REVIEWS           = '//*[@rel="http://schemas.netflix.com/feed.reviews"]'
   RECOMMENDATIONS   = '//*[@rel="http://schemas.netflix.com/feed.recommendations"]'
@@ -39,6 +41,7 @@ class UserFeed
     extract_link( WATCHED_HISTORY, KEY_WATCHED, xml )
     extract_link( RENTAL_HISTORY, KEY_HISTORY, xml )
     extract_link( DISC_QUEUE, KEY_DISC_QUEUE, xml )
+    extract_link( RECENT_DISC_QUEUE, KEY_RECENT_DISC, xml )
     extract_link( INSTANT_QUEUE, KEY_INSTANT_QUEUE, xml )
     extract_link( REVIEWS, KEY_REVIEWS, xml )
     extract_link( RECOMMENDATIONS, KEY_RECOMMENDATIONS, xml )
@@ -66,6 +69,10 @@ class UserFeed
 
   def disc_queue
     @feeds[KEY_DISC_QUEUE]
+  end
+  
+  def recent_disc_queue
+    @feeds[KEY_RECENT_DISC]
   end
 
   def instant_queue
