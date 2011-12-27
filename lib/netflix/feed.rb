@@ -37,7 +37,7 @@ class Feed
         end
       end
     rescue RestClient::Request::Unauthorized => unauthorized
-      Rails.logger.error "[#{name}]: unauthorized [#{re.message}]"
+      Rails.logger.error "[#{name}]: unauthorized [#{unauthorized.message}]"
     rescue RestClient::Exception => re
       Rails.logger.error "[#{name}]: exception [#{re.message}] [#{re.class}]"
     end
