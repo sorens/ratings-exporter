@@ -56,8 +56,8 @@
   <h2>Good news, Bad news</h2>
   <p>The bad news is that this service is only using one web dyno and one worker process. So, it is going to be slow. The good news is, this service is free!</p>
   <p>Even more good news, the code for this service is available on <a href="https://github.com/sorens/ratings-exporter">Github</a>. Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
-  <p>2011-12-26: Even more good news, Batch exporting is now supported! So it is very unlikel you will hit the Netflix-enforced 5,000 requests per day per user limit. If you hit the 5,000 limit, you can come back to this service tomorrow and there will be a <em>Continue</em> button which will allow you to continue processing your export where you left off. If you want to skip the remaining exports, you can click the <em>Ignore</em> button instead. At which point, you will be able to download your data. However, the batch exporting is not always fool-proof. Sometimes you are left with a few movies that are missing your rating data. If you click the <em>Continue</em> button, we'll process those movies indivudally and hopefully be able to update them with your ratings.
-    <p>Use of this service is at your own risk. The authors of this webservice can not promise that bad things won't happen, up to and including the universe collasping back on itself.</p>
+  <p><em>Update:</em> We've updated the service to use batch requests so now you shouldn't encounter Netflix's request limit. However, there are still circumstances where requests for ratings return no results. If that happens, we detect that there are un-exported ratings and offer you a chance to download those remaining ratings individually by clicking the <em>Continue</em> button. If you would like to skip exporting those ratings, you can lick the <em>Ignore</em> and we'll let you download your data.</p>
+  <p>Use of this service is at your own risk. The authors of this webservice can not promise that bad things won't happen, up to and including the universe collasping back on itself.</p>
 </div>
 </div>
 <div class="row">

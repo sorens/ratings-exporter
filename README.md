@@ -37,7 +37,7 @@ Good news, Bad news
 
   <p>The bad news is that this service is only using one web dyno and one worker process. So, it is going to be slow. The good news is, this service is free!</p>
   <p>Even more good news, the code for this service is available on [Github](https://github.com/sorens/ratings_exporter). Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
-  <p>Netflix does limit the number of requests to 5,000 per user per day. I figured this out after I had architected the service to make a single request per title to fetch your ratings. There is a way to request several ratings in a batch, but I haven't got back and retrofitted the service to do that yet. If you have more than 5,000 movies in your rental history, then it will take you a few days to export your entire history. If you hit the 5,000 limit, you can come back to this service tomorrow and there will be a <em>Continue</em> button which will allow you to continue processing your export where you left off. If you want to skip the remaining exports, you can click the <em>Ignore</em> button instead. At which point, you will be able to download your data.
+  <p><em>Update</em>We've updated the service to use batch requests so now you shouldn't encounter Netflix's request limit. However, there are still circumstances where requests for ratings return no results. If that happens, we detect that there are un-exported ratings and offer you a chance to download those remaining ratings individually by clicking the <em>Continue</em> button. If you would like to skip exporting those ratings, you can lick the <em>Ignore</em> and we'll let you download your data.</p>
 
 
 Format of the JSON
