@@ -38,7 +38,7 @@ class WelcomeController < ApplicationController
     if progress == 0 and request.xhr?
       progress = Title.where( :user_id => user_id, :exported => 0 ).count
       if progress > 0
-        flash[:error] = "We were unable to export all your ratings."
+        flash[:alert] = "We were unable to export all your ratings."
         json[:location] = url_for( :controller => :welcome, :action => :index )
       else
         flash[:notice] = "Your export has finished"
