@@ -63,6 +63,8 @@ private
         DownloadRentalsJob.enqueue( "shipped", user_feed.shipped, token, secret, user_id )
         DownloadRentalsJob.enqueue( "watched", user_feed.watched, token, secret, user_id )
         DownloadRentalsJob.enqueue( "ratings", user_feed.ratings, token, secret, user_id )
+        DownloadRentalsJob.enqueue( "instant", user_feed.instant_queue, token, secret, user_id )
+        DownloadRentalsJob.enqueue( "disc", user_feed.disc_queue, token, secret, user_id )
       rescue Exceptions::OauthHelperException => e
         Rails.logger.error "failed to request [#{e.class}] for [#{e.message}]"
         msg = { :error => e.message }
