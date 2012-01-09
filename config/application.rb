@@ -72,5 +72,7 @@ module RatingsExporter
     config.netflix_app_key                  = ENV['NETFLIX_KEY']
     # netflix application secret
     config.netflix_app_secret               = ENV['NETFLIX_SECRET']
+    # google analytics
+    config.google_analytics_prop_id         = ENV['GOOGLE_ANALYTICS_PROP_ID']
   end
 end
