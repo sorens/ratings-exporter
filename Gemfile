@@ -14,6 +14,7 @@ gem 'less-rails-bootstrap', "~> 1.4.0"
 gem 'activeadmin'
 gem 'sass-rails',     "~> 3.1.0"
 gem 'meta_search',    '>= 1.1.0.pre'
+gem 'fastercsv'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   before_filter :verify_session, :except => [:sign_out,:index]
   before_filter :process_flash
-  respond_to :json, :html
+  respond_to :json, :html, :csv
   
   def index
     if session[:user_id]
@@ -57,9 +57,13 @@ class WelcomeController < ApplicationController
     @titles = Title.find_all_by_user_id( session[:user_id] )
     if @titles.count > 0
       respond_to do |format|
-        format.json {
-          respond_with( @titles )
-        }
+        # format.json {
+        #   a = {}
+        #   @titles.each {|title| a[title.netflix_id] = title.to_json }
+        #   render :json => a.to_json
+        # }
+        format.json { render :json => Hash[@titles.map{|x| [x.netflix_id,x.to_json]}] }
+        format.csv { render :text => @titles.collect{ |x| x.to_csv } }
       end
     else
       redirect_to :root, :alert => "There were no records to export."

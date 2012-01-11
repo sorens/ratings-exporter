@@ -1,6 +1,7 @@
 <h1>your export has finished</h1>
 <p/>
 <p>We have exported <%= @titles %> ratings for you. Click the download button to receive your data.</p>
-<p><%= link_to "Download", "#{download_path}.json", :class => "btn primary large" %>
+<p><%= link_to "Download JSON", "#{download_path}.json", :class => "btn primary large" %>
+  <%= link_to "Download CSV", "#{download_path}.csv", :class => "btn primary large" %></p>
 
 <%= render :partial => '/shared/logo' %>
