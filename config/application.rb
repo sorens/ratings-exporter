@@ -74,5 +74,9 @@ module RatingsExporter
     config.netflix_app_secret               = ENV['NETFLIX_SECRET']
     # google analytics
     config.google_analytics_prop_id         = ENV['GOOGLE_ANALYTICS_PROP_ID']
+    # facebook app id
+    config.facebook_app_id                  = ENV['FB_APP_ID']
+    # uservoice
+    config.uservoice_id                     = ENV['USERVOICE_ID']
   end
 end
