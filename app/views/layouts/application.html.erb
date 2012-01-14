@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/WebPage">
 <head>
   <title>ratings exporter for Netflix</title>
   <%= stylesheet_link_tag    "application" %>
@@ -25,8 +25,26 @@
     })();
 
   </script>
+  <!-- Place this render call where appropriate -->
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+  <meta itemprop="name" content="Ratings Exporter for Netflix">
+  <meta itemprop="description" content="Export your ratings from Netflix.">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=159603884147956";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="container">

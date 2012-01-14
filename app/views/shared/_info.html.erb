@@ -1,9 +1,18 @@
 <div class="row">
+  <div class="span16">
+  <!-- Place this tag where you want the +1 button to render -->
+  <g:plusone></g:plusone>
+  <!-- Facebook -->
+  <div class="fb-like" data-href="http://ratings-exporter.heroku.com" data-send="true" data-layout="button_count" data-width="20" data-show-faces="true" data-font="lucida grande"></div>
+  </div>
+</div>
+
+<div class="row">
 <div class="span6">
   <h2>What</h2>
   <p>
     This service was born of my desire to quit Netflix but without having to lose all that info on what I've watched and what I've rated. To that end, I started investigating the <%= link_to "Netflix API", "http://developer.netflix.com" %>. While the API doesn't have exactly what I wanted (e.g. fetch all my rated movies), it was able supply enough functionality for me to fetch ratings for all the movies I had rented/streamed. Good enough, I suppose. Since collecting that information from Netflix takes time, I created a web service which would spawn <code>delayed_jobs</code> to do the work.</p>
-    <p> To get started with your own export, click the <em>Authorize</em> button above, fill in your Netflix credential (note: we use Netflix's OAuth API. See the next section for more details), and this service will be begin exporting your Netflix DVD and Instant rental queue data for you. Once all of the records have been exported, you'll be able to download the data as a blob of <code>json</code>.</p>
+    <p> To get started with your own export, click the <em>Authorize</em> button above, fill in your Netflix credential (note: we use Netflix's OAuth API. See the next section for more details), and this service will be begin exporting your Netflix DVD and Instant rental queue data for you. Once all of the records have been exported, you'll be able to download the data as a blob of <code>json</code> or as <code>csv</code>.</p>
     <p>Thanks to <%= link_to "Christopher Cotton", "http://blog.christophercotton.com/" %> for answering my <%= link_to "Netflix OAuth question on Stack Overflow", "http://stackoverflow.com/a/8516022/349423" %>!
 
 <p>If you would like to help keep this service running, please donate!</p>
