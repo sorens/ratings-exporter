@@ -19,7 +19,7 @@ class Title < ActiveRecord::Base
   
   def to_csv
     FasterCSV.generate do |csv|
-      csv << ["#{self.id}","#{self.name}","#{self.year}","#{self.url}","#{self.rating}","#{self.type}","#{self.viewed_date}","#{self.exported}"]
+      csv << ["#{self.netflix_id}","#{self.name}","#{self.year}","#{self.url}","#{self.rating}","#{self.type}","#{self.viewed_date}","#{self.exported}"]
     end
   end
 
