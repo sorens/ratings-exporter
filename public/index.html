@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ratings exporter for Netflix | Loading...</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $.ajax({
+          url: '/status',
+          success: function(data) {
+            window.location.replace('/welcome')
+          }
+        });
+        
+        $('#loading')
+        .hide()
+        .delay(1000)
+        .fadeIn();
+      });
+    </script>
+    <style>
+    body
+    {
+      padding-top: 60px;
+    }  
+    </style>
+  </head>
+  <body>
+  <div id="loading">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand" href="/">ratings exporter for Netflix</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-unit">
+        <div data-alert="alert" id="loading_" class="alert-message block-message success fade in">
+          <a href="/home" class="close">Continue</a>
+          <h3>We are loading <b>ratings exporter for Netflix</b></h3>
+          <p>It will just be a moment...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

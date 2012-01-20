@@ -12,4 +12,7 @@ RatingsExporter::Application.routes.draw do
   get 'continue'                => 'welcome#continue'
   get 'ignore'                  => 'welcome#ignore'
   root :to => "welcome#index"
+
+  match 'status' => proc {|env| [200, {}, '...']}
+  
 end
