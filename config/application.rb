@@ -78,5 +78,9 @@ module RatingsExporter
     config.facebook_app_id                  = ENV['FB_APP_ID']
     # uservoice
     config.uservoice_id                     = ENV['USERVOICE_ID']
+    # google ad_client
+    config.google_ad_client                 = ENV['GOOGLE_AD_CLIENT']
+    # google ad_slot
+    config.google_ad_slot                   = ENV['GOOGLE_AD_SLOT']
   end
 end
