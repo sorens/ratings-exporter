@@ -11,6 +11,7 @@ RatingsExporter::Application.routes.draw do
   get 'download'                => 'welcome#download'
   get 'continue'                => 'welcome#continue'
   get 'ignore'                  => 'welcome#ignore'
+  get 'delete_all'              => 'welcome#delete_all'
   root :to => "welcome#index"
 
   match 'status' => proc {|env| [200, {}, '...']}

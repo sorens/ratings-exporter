@@ -41,7 +41,7 @@ class WelcomeController < ApplicationController
         flash[:alert] = "We were unable to export all your ratings."
         json[:location] = url_for( :controller => :welcome, :action => :index )
       else
-        flash[:notice] = "Your export has finished"
+        flash[:notice] = "Your jobs have finished"
         json[:location] = url_for( :controller => :welcome, :action => :index )
       end
     elsif progress == 0 and ! request.xhr?
@@ -79,6 +79,11 @@ class WelcomeController < ApplicationController
   def ignore
     IgnoreUnfinishedJob.enqueue( session[:access_token], session[:secret], session[:user_id] )
     redirect_to progress_path, :alert => "Ignoring your unfinished exports."
+  end
+  
+  def delete_all
+    DeleteAllJob.enqueue( session[:access_token], session[:secret], session[:user_id] )
+    redirect_to progress_path, :notice => "Deleting your exported titles."
   end
 
 private
