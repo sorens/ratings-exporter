@@ -29,7 +29,8 @@
     </div>
   </div>
   <div class="span8">
-      <div class="well">
+      <div style="text-align: center;">
+        <br/>
         <script type="text/javascript"><!--
         google_ad_client = "<%= Rails.application.config.google_ad_client %>";
         /* adv01 */
@@ -57,9 +58,13 @@
   <div class="span8">
     <div class="well">
       <h2>Good news, Bad news</h2>
-      <p>The bad news is that this service is only using one web dyno and one worker process. So, it is going to be slow. The good news is, this service is free!</p>
-      <p>Even more good news, the code for this service is available on <%= link_to "Github", "https://github.com/sorens/ratings-exporter" %>. Feel free to inspect it to ensure that we're not doing anything untoward with your data.</p>
+      <p>The bad news is that this service is only using one web dyno and one worker process. So, it could be slow if many people try using it at the same time. The good news is, this service is free!</p>
+      <p>Even more good news, the code for this service is available on <%= link_to "Github", "https://github.com/sorens/ratings-exporter" %>. Feel free to inspect it to ensure that we're not doing anything bad with your data.</p>
       <p><em>Update:</em> We've updated the service to use batch requests so now you shouldn't encounter Netflix's request limit. However, there are still circumstances where requests for ratings return no results. If that happens, we detect that there are un-exported ratings and offer you a chance to download those remaining ratings individually by clicking the <em>Continue</em> button. If you would like to skip exporting those ratings, you can lick the <em>Ignore</em> and we'll let you download your data.</p>
+    </div>
+  </div>
+  <div class="span16">
+    <div class="well">
       <p>Use of this service is at your own risk. The authors of this webservice can not promise that bad things won't happen, up to and including the universe collasping back on itself.</p>
     </div>
   </div>
