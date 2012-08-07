@@ -46,10 +46,10 @@ test:
   username: 
   password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: ratings_exporter_production
-  pool: 5
-  username: 
-  password:
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: ratings_exporter_production
+#   pool: 5
+#   username: 
+#   password:
