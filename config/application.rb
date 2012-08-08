@@ -83,5 +83,11 @@ module RatingsExporter
     config.google_ad_client                 = ENV['GOOGLE_AD_CLIENT']
     # google ad_slot
     config.google_ad_slot                   = ENV['GOOGLE_AD_SLOT']
+    # sendmail user_name
+    config.sendmail_username                = ENV['SENDGRID_USERNAME']
+    # sendmail_password
+    config.sendmail_password                = ENV['SENDGRID_PASSWORD']
+    # mail host
+    config.mail_host                        = ENV['MAILER_HOST']
   end
 end
