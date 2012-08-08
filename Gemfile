@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.2.2'
 gem "SystemTimer", :require => "system_timer", :platforms => :ruby_18
 gem "rack-timeout"
 gem 'pg'
@@ -12,7 +12,7 @@ gem 'oauth'
 gem 'delayed_job',          "~> 2.1.4"
 gem 'less-rails-bootstrap', "~> 1.4.0"
 gem 'activeadmin'
-gem 'sass-rails',     "~> 3.1.0"
+gem 'sass-rails',     '~> 3.2.3'
 gem 'meta_search',    '>= 1.1.0.pre'
 gem 'fastercsv'
 gem 'thin'
@@ -30,8 +30,12 @@ gem 'newrelic_rpm'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+
+  gem 'uglifier', '>= 1.0.3'
 end
 
 group :test do
