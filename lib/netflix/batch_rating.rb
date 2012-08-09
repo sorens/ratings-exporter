@@ -26,7 +26,7 @@ class BatchRating
         while start < @urls.count
           tmp = @urls[0..length-1]
           start = start + length
-          title_refs = tmp.collect.join(",")
+          title_refs = tmp.join(",")
           resp = access_token.post( rating_url, { :title_refs => title_refs, :method => "GET" } )
           Rails.logger.info "batch response [#{resp.inspect}]"
           xml = Nokogiri::XML( resp.body.to_s )
