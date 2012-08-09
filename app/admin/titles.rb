@@ -14,6 +14,7 @@ ActiveAdmin.register Title do
   filter :netflix_type
   filter :viewed_date
   filter :created_at
+  filter :user
   
   index do
     id_column
