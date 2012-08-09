@@ -21,6 +21,11 @@ class WelcomeController < ApplicationController
       if @titles > 0
         render 'result' and return
       end
+
+      @titles = Title.where( :user_id => user_id, :exported => 2 ).count
+      if @titles > 0
+        render 'result' and return
+      end
     end
   end
   
