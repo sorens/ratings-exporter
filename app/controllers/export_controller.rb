@@ -40,7 +40,7 @@ private
         Rails.logger.info "user_id: [#{user_id}] authorized"
       rescue OAuth::Unauthorized => e
         Rails.logger.error "failed to sign in [#{e.message}]"
-        redirect_to :root, :alert => "Netflix failed to authorize." and return
+        redirect_to :welcome, :alert => "Netflix failed to authorize." and return
       end
     end
     
@@ -71,6 +71,6 @@ private
       end
     end
     
-    redirect_to :root, msg
+    redirect_to :welcome, msg
   end
 end

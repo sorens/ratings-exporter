@@ -33,7 +33,7 @@ class WelcomeController < ApplicationController
     session[:user_id] = nil
     session[:access_token] = nil
     session[:secret] = nil
-    redirect_to :root, :notice => "You have been signed out."
+    redirect_to :welcome, :notice => "You have been signed out."
   end
   
   def progress
@@ -50,7 +50,7 @@ class WelcomeController < ApplicationController
         json[:location] = url_for( :controller => :welcome, :action => :index )
       end
     elsif progress == 0 and ! request.xhr?
-      redirect_to :root, :notice => "Your export has finished." and return
+      redirect_to :welcome, :notice => "Your export has finished." and return
     end
     respond_to do |format|
       format.json { render :json => json, :status => 200 }
@@ -72,7 +72,7 @@ class WelcomeController < ApplicationController
         format.xml { render :xml => @titles.to_xml }
       end
     else
-      redirect_to :root, :alert => "There were no records to export."
+      redirect_to :welcome, :alert => "There were no records to export."
     end
   end
   
@@ -94,7 +94,7 @@ class WelcomeController < ApplicationController
 private
   def verify_session
     unless session[:user_id]
-      redirect_to :root, :alert => "You must authenticate first."
+      redirect_to :welcome, :alert => "You must authenticate first."
     end
   end
   
