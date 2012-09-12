@@ -68,7 +68,7 @@ class WelcomeController < ApplicationController
         #   render :json => a.to_json
         # }
         format.json { render :json => Hash[@titles.map{|x| [x.netflix_id,x.to_json]}] }
-        format.csv { render :text => @titles.collect{ |x| x.to_csv } }
+        format.csv { render :layout => false }
         format.xml { render :xml => @titles.to_xml }
       end
     else

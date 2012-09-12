@@ -18,11 +18,4 @@ class Title < ActiveRecord::Base
       :exported => self.exported
     }
   end
-  
-  def to_csv
-    ::CSV.generate do |csv|
-      csv << ["#{self.netflix_id}","#{self.name}","#{self.year}","#{self.url}","#{self.rating}","#{self.netflix_type}","#{self.viewed_date}","#{self.exported}"]
-    end
-  end
-
 end
