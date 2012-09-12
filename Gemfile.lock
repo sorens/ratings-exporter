@@ -209,7 +209,6 @@ DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
   delayed_job (~> 2.1.4)
-  fastercsv
   jquery-rails
   less-rails-bootstrap (~> 1.4.0)
   meta_search (>= 1.1.0.pre)

@@ -1,3 +1,5 @@
+require 'csv' 
+
 class Title < ActiveRecord::Base
   
   scope :fivedaysold, where( 'created_at < ?', 5.days.ago )
@@ -18,8 +20,8 @@ class Title < ActiveRecord::Base
   end
   
   def to_csv
-    FasterCSV.generate do |csv|
-      csv << ["#{self.netflix_id}","#{self.name}","#{self.year}","#{self.url}","#{self.rating}","#{self.type}","#{self.viewed_date}","#{self.exported}"]
+    ::CSV.generate do |csv|
+      csv << ["#{self.netflix_id}","#{self.name}","#{self.year}","#{self.url}","#{self.rating}","#{self.netflix_type}","#{self.viewed_date}","#{self.exported}"]
     end
   end
 
