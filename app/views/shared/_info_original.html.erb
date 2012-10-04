@@ -21,16 +21,6 @@
 <div class="row">
   <div class="span16">
     <div class="well">
-      <div style="text-align: center;">
-        <h3>Notice: Netflix has changed their API as of September 15, 2012</h3>
-        <p>Due to this change, the ratings-exporter service has been discontinued.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="span16">
-    <div class="well">
     <div style="text-align: center;">
     <h2><a href="http://itunes.apple.com/us/app/spaceward-ho!/id510527152?ls=1&amp;mt=8">Spaceward Ho! for iPad</a></h2>
     <p>
@@ -43,6 +33,24 @@
     <a href="http://itunes.apple.com/us/app/spaceward-ho!/id510527152?ls=1&amp;mt=8">Download Spaceward Ho! for iPad</a> now!
     </p>
     </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span16">
+    <div class="well">
+      <h3>Notice: Netflix is changing their API as of September 15, 2012</h3>
+      <p>What does this mean for this ratings-exporter service? If you look at how we pull your ratings for you, you will see that we rely on the following APIs:</p>
+      <ul>
+        <li>feed.rental_history</li>
+        <li>feed.rental_history.shipped</li>
+        <li>feed.rental_history.watched</li>
+        <li>feed.queues.disc</li>
+        <li>feed.queues.instant</li>
+      </ul>
+      <p>If you read the developer notes about the changes (<a href="http://developer.netflix.com/blog/read/Upcoming_Changes_to_the_Netflix_API_Program">http://developer.netflix.com/blog/read/Upcoming_Changes_to_the_Netflix_API_Program</a>), you'll see that the first three are being removed. This likely means that after September 15, 2012, you won't be able to download a list of your rated movies via this service with the same fidelity as prior to September 15th.</p>
+      
+      <p>If you know people who might want to download their ratings, you should let them know about this service before September 15, 2012. After September 15th, we might just stop the service rather than have it only return a fraction of your ratings.</p>
     </div>
   </div>
 </div>
