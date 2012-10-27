@@ -13,7 +13,7 @@ class NetflixData
   #<Nokogiri::XML::Element:0x824c5f40 name="link" 
   #namespace=#<Nokogiri::XML::Namespace:0x824c6be8 href="http://www.w3.org/2005/Atom"> 
   #attributes=[#<Nokogiri::XML::Attr:0x824c5ec8 name="href" 
-  #value="http://api.netflix.com/catalog/titles/movies/60036238">, 
+  #value="http://api-public.netflix.com/catalog/titles/movies/60036238">, 
   #<Nokogiri::XML::Attr:0x824c5eb4 name="rel" 
   #value="http://schemas.netflix.com/catalog/title">, 
   #<Nokogiri::XML::Attr:0x824c5ea0 name="title" value="I, Robot">]>]

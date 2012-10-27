@@ -48,7 +48,7 @@ Format of the JSON
         "id": "60010377",
         "title": "Funny Girl",
         "year": "1968",
-        "url": "http://api.netflix.com/catalog/titles/movies/60010377",
+        "url": "http://api-public.netflix.com/catalog/titles/movies/60010377",
         "rating": "4.0",
         "type": "streamed",
         "viewed_date": "2011-12-05T09:03:48Z"
@@ -57,7 +57,7 @@ Format of the JSON
         "id": "70102614",
         "title": "Dead Like Me: Season 1: \"Reaping Havoc\"",
         "year": "2003",
-        "url": "http://api.netflix.com/catalog/titles/programs/70102614",
+        "url": "http://api-public.netflix.com/catalog/titles/programs/70102614",
         "rating": "5.0",
         "type": "streamed",
         "viewed_date": "2009-04-03T17:20:30Z"
@@ -67,9 +67,9 @@ Format of the JSON
 Format of the CSV
 ------------------
 <pre>
-60010377,Funny Girl,1968,http://api.netflix.com/catalog/titles/movies/60010377,4.0,Title,2011-12-05 01:03:48 -0800,1
-70102614,"Dead Like Me: Season 1: ""Reaping Havoc""",2003,http://api.netflix.com/catalog/titles/programs/70102614,5.0,Title,2009-04-03 10:20:30 -0700,1
-60003378,Billy Elliot,2000,http://api.netflix.com/catalog/titles/movies/60003378,5.0,Title,2001-06-01 15:37:30 -0700,1
+60010377,Funny Girl,1968,http://api-public.netflix.com/catalog/titles/movies/60010377,4.0,Title,2011-12-05 01:03:48 -0800,1
+70102614,"Dead Like Me: Season 1: ""Reaping Havoc""",2003,http://api-public.netflix.com/catalog/titles/programs/70102614,5.0,Title,2009-04-03 10:20:30 -0700,1
+60003378,Billy Elliot,2000,http://api-public.netflix.com/catalog/titles/movies/60003378,5.0,Title,2001-06-01 15:37:30 -0700,1
 </pre>
 Format of the XML
 ------------------
@@ -86,7 +86,7 @@ Format of the XML
     &lt;viewed-date type=&quot;datetime&quot;&gt;2011-12-05T01:03:48-08:00&lt;/viewed-date&gt;
     &lt;updated-at type=&quot;datetime&quot;&gt;2012-01-06T00:25:44-08:00&lt;/updated-at&gt;
     &lt;url&gt;
-      http://api.netflix.com/catalog/titles/movies/60010377
+      http://api-public.netflix.com/catalog/titles/movies/60010377
     &lt;/url&gt;
     &lt;id type=&quot;integer&quot;&gt;22859&lt;/id&gt;
     &lt;user-id&gt;T13m_bQjEynRQ3kR8g1Vk45acsvEkL2AazdOiLcaYMMus-&lt;/user-id&gt;
@@ -103,7 +103,7 @@ Format of the XML
     &lt;viewed-date type=&quot;datetime&quot;&gt;2009-04-03T10:20:30-07:00&lt;/viewed-date&gt;
     &lt;updated-at type=&quot;datetime&quot;&gt;2012-01-06T00:26:00-08:00&lt;/updated-at&gt;
     &lt;url&gt;
-      http://api.netflix.com/catalog/titles/programs/70102614
+      http://api-public.netflix.com/catalog/titles/programs/70102614
     &lt;/url&gt;
     &lt;id type=&quot;integer&quot;&gt;23858&lt;/id&gt;
     &lt;user-id&gt;T13m_bQjEynRQ3kR8g1Vk45acsvEkL2AazdOiLcaYMMus-&lt;/user-id&gt;
@@ -120,7 +120,7 @@ Format of the XML
     &lt;viewed-date type=&quot;datetime&quot;&gt;2001-06-01T15:37:30-07:00&lt;/viewed-date&gt;
     &lt;updated-at type=&quot;datetime&quot;&gt;2012-01-06T00:25:36-08:00&lt;/updated-at&gt;
     &lt;url&gt;
-      http://api.netflix.com/catalog/titles/movies/60003378
+      http://api-public.netflix.com/catalog/titles/movies/60003378
     &lt;/url&gt;
     &lt;id type=&quot;integer&quot;&gt;22822&lt;/id&gt;
     &lt;user-id&gt;T13m_bQjEynRQ3kR8g1Vk45acsvEkL2AazdOiLcaYMMus-&lt;/user-id&gt;

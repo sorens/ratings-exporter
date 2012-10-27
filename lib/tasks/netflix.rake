@@ -121,7 +121,7 @@ namespace :netflix do
     access_token = at_load
     if access_token
       user_id = access_token.params['user_id']
-      encoded_title_url = URI.escape "http://api.netflix.com/catalog/titles/movies/#{args.netflix_id.to_s}", RESERVED
+      encoded_title_url = URI.escape "http://api-public.netflix.com/catalog/titles/movies/#{args.netflix_id.to_s}", RESERVED
       puts "url: [#{encoded_title_url}]"
       rating_url = "/users/#{user_id}/ratings/title?title_refs=#{encoded_title_url}"
       resp = access_token.get( rating_url )
