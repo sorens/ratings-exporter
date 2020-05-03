@@ -1,6 +1,17 @@
 ratings exporter for Netflix
 ============================
 
+## Netflix has changed their API as of September 15, 2012
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️  
+```
+This service is no longer available. Netflix changed their API 
+and it is no longer possible for people to export their own ratings 
+on movies. 
+
+This repository will be archived.
+```
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️  
+
 What
 ----
 
@@ -9,17 +20,6 @@ This service was born of my desire to quit Netflix but without having to lose al
 To get started with your own export, click the <em>Authorize</em> button above, fill in your Netflix credential (note: we use Netflix's OAuth API. See the next section for more details), and this service will be begin exporting your Netflix DVD and Instant rental queue data for you. Once all of the records have been exported, you'll be able to download the data as a blob of <code>json</code>, as <code>csv</code> or as <code>xml</code>.
 
 Thanks to [Christopher Cotton](http://blog.christophercotton.com/) for answering my [Netflix OAuth question on Stack Overflow](http://stackoverflow.com/a/8516022/349423)!
-
-<p>If you would like to help keep this service running, please donate!</p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<fieldset>
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="HMZ2WP3MK36QN">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" class="btn large" style="width: 74px;">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</fieldset>
-</form>
-
 
 Secure
 ------
